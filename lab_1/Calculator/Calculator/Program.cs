@@ -16,11 +16,21 @@ namespace Calculator
 
             while (!endApp)
             {
-                Console.WriteLine("Введите первый операнд: ");
-                firstvalue = Double.Parse(Console.ReadLine());
 
-                Console.WriteLine("Введите второй операнд: ");
-                secondvalue = Double.Parse(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Введите первое число: ");
+                    firstvalue = Double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите второе число: ");
+                    secondvalue = Double.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Вы ввели не число");
+                    Console.WriteLine();
+                    continue;
+                }
 
                 Console.WriteLine("Выберите операцию: + , - , * , /");
                 operatorV = Console.ReadLine();
@@ -54,7 +64,7 @@ namespace Calculator
                 Console.Write("Введите 'bye' и Enter чтобы завершить работу, или нажмите любую другую клавишу и Enter чтобы продолжить: ");
                 if (Console.ReadLine() == "bye") endApp = true;
 
-                Console.WriteLine("\n");
+                Console.WriteLine();
             }
         }
     }
