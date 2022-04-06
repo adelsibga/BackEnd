@@ -13,8 +13,6 @@ namespace Calculator
             double firstvalue, secondvalue;
             string operatorV;
             bool endApp = false;
-            Console.WriteLine(double.MaxValue);
-            Console.WriteLine(double.MinValue);
 
             while (!endApp)
             {
