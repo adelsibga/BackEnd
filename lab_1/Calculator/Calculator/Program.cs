@@ -13,6 +13,8 @@ namespace Calculator
             double firstvalue, secondvalue;
             string operatorV;
             bool endApp = false;
+            Console.WriteLine(double.MaxValue);
+            Console.WriteLine(double.MinValue);
 
             while (!endApp)
             {
@@ -38,7 +40,7 @@ namespace Calculator
                 switch (operatorV)
                 {
                     case "+":
-                        if ((firstvalue + secondvalue) > double.MaxValue)
+                        if (((firstvalue + secondvalue) > double.MaxValue) || ((firstvalue + secondvalue) < double.MinValue))
                         {
                             Console.WriteLine("Переполнение!");
                         }
@@ -47,7 +49,7 @@ namespace Calculator
                         break;
 
                     case "-":
-                        if ((firstvalue - secondvalue) > double.MaxValue)
+                        if ((firstvalue - secondvalue) > double.MaxValue || ((firstvalue - secondvalue) < double.MinValue))
                         {
                             Console.WriteLine("Переполнение!");
                         }
@@ -56,7 +58,7 @@ namespace Calculator
                         break;
 
                     case "*":
-                        if ((firstvalue * secondvalue) > double.MaxValue)
+                        if ((firstvalue * secondvalue) > double.MaxValue || ((firstvalue * secondvalue) < double.MinValue))
                         {
                             Console.WriteLine("Переполнение!");
                         }
@@ -67,7 +69,7 @@ namespace Calculator
                     case "/":
                         if (secondvalue == 0)
                             Console.WriteLine("Нельзя делить на 0!");
-                        else if ((firstvalue / secondvalue) > double.MaxValue)
+                        else if ((firstvalue / secondvalue) > double.MaxValue || ((firstvalue / secondvalue) < double.MinValue))
                         {
                             Console.WriteLine("Переполнение!");
                         }
