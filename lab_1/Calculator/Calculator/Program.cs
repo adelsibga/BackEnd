@@ -38,20 +38,39 @@ namespace Calculator
                 switch (operatorV)
                 {
                     case "+":
-                        Console.WriteLine(firstvalue + secondvalue);
+                        if ((firstvalue + secondvalue) > double.MaxValue)
+                        {
+                            Console.WriteLine("Переполнение!");
+                        }
+                        else
+                            Console.WriteLine(firstvalue + secondvalue);
                         break;
 
                     case "-":
-                        Console.WriteLine(firstvalue - secondvalue);
+                        if ((firstvalue - secondvalue) > double.MaxValue)
+                        {
+                            Console.WriteLine("Переполнение!");
+                        }
+                        else
+                            Console.WriteLine(firstvalue - secondvalue);
                         break;
 
                     case "*":
-                        Console.WriteLine(firstvalue * secondvalue);
+                        if ((firstvalue * secondvalue) > double.MaxValue)
+                        {
+                            Console.WriteLine("Переполнение!");
+                        }
+                        else
+                            Console.WriteLine(firstvalue * secondvalue);
                         break;
 
                     case "/":
                         if (secondvalue == 0)
                             Console.WriteLine("Нельзя делить на 0!");
+                        else if ((firstvalue / secondvalue) > double.MaxValue)
+                        {
+                            Console.WriteLine("Переполнение!");
+                        }
                         else
                             Console.WriteLine(firstvalue / secondvalue);
                         break;
