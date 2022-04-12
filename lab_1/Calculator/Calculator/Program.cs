@@ -10,7 +10,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            double firstvalue, secondvalue;
+            double firstvalue = 0, secondvalue = 0;
             string operatorV;
             bool endApp = false;
 
